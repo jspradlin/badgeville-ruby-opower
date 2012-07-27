@@ -43,5 +43,6 @@ module BadgevilleBerlinJsonFormat
     else
        json['data']
     end
+    
   end
 end

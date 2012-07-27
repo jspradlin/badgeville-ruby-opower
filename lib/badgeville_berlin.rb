@@ -2,6 +2,7 @@ require 'active_resource'
 
 # Adds BadgevilleBerlinJson custom format.
 require "badgeville_berlin/formats/badgeville_berlin_json_format.rb"
+require "badgeville_berlin/formats/badgeville_berlin_group_json_format.rb"
 
 # Subclasses ActiveResource.
 require "badgeville_berlin/base_resource.rb"

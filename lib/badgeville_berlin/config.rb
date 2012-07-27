@@ -10,6 +10,7 @@ module BadgevilleBerlin
       def conf ( options = {} )
 
         BaseResource.format = :badgeville_berlin_json
+        Group.format = :badgeville_berlin_group_json
 
         if options[:host_name] == nil || options[:host_name].empty?
             raise ArgumentError.new("Please enter the URL for the Badgeville host where you want to make your request ( e.g. :host_name  => 'http://www.example.com' ).")
