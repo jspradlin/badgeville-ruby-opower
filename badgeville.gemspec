@@ -3,15 +3,13 @@ $:.push File.expand_path("../lib", __FILE__)
 require "badgeville_berlin/version"
 
 Gem::Specification.new do |s|
-  s.name        = "badgeville_berlin"
+  s.name        = "badgeville_berlin_opower"
   s.version     = BadgevilleBerlin::VERSION
-  s.authors     = ["Andrija Perovic", "Alex Tran", "Jimmy Zhang", "Supraja Narasimhan"]
-  s.email       = ["supraja@badgeville.com"]
-  s.homepage    = "https://github.com/badgeville/badgeville-ruby"
-  s.summary     = %q{A Ruby wrapper for the Badgeville RESTful Berlin API.}
+  s.authors     = ["Justin Spradlin"]
+  s.email       = ["justin@opower.com"]
+  s.homepage    = "https://github.com/jspradlin/badgeville-ruby-opower"
+  s.summary     = %q{A Ruby wrapper for the Badgeville RESTful Berlin API.  Forked from the original Badgeville Gem}
   s.description = %q{This is an open source Ruby wrapper for interacting with the Badgeville RESTful Berlin API.}
-
-  s.rubyforge_project = "badgeville_berlin"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
