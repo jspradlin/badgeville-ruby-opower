@@ -1,9 +1,6 @@
-# For custom BadgevilleBerlinJson
 require 'active_support/json'
 require "badgeville_berlin/version"
 
-# Handles the fact that a JSON formatted GET response does not meet the
-# ActiveResource standard, and is instead preceded by the root key :data.
 module BadgevilleBerlinGroupJsonFormat
   extend self
 
@@ -33,16 +30,15 @@ module BadgevilleBerlinGroupJsonFormat
     ActiveSupport::JSON.encode(hash, options)
   end
 
-  # Converts a serialized string representation of  a remote resource into
-  # a Ruby object, whether or not it has a root key :data.
   def decode(json)
     return unless json
     json = ActiveResource::Formats.remove_root(ActiveSupport::JSON.decode(json))
-    if json.kind_of?(Array) || !json.has_key?('data')
-      json
-    else
-       json['data']
+
+    json['data'].each do |mission|
+      mission['rewards'] = mission['rewards'].values
     end
-    
+
+    json['data']
   end
+
 end
