@@ -4,7 +4,7 @@ require "badgeville_berlin/version"
 
 # Handles the fact that a JSON formatted GET response does not meet the
 # ActiveResource standard, and is instead preceded by the root key :data.
-module BadgevilleBerlinJsonFormat
+module BadgevilleBerlinGroupJsonFormat
   extend self
 
   # Returns the extension 'json' to be added to the HTTP request URL for JSON endpoints.
