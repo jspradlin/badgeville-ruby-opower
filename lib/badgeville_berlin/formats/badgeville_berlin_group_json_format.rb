@@ -13,6 +13,9 @@ module BadgevilleBerlinGroupJsonFormat
       json
     else
       if json['data'].kind_of?(Array)
+        # Modify the json to return rewards as an Array
+        # instead of a Hash with the RewardDefinition as
+        # the key because the latter will not parse.
         json['data'].each do |group|
           if group['rewards'].present?
             group['rewards'] = group['rewards'].values
