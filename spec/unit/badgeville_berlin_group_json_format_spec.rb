@@ -47,8 +47,8 @@ describe BadgevilleBerlinGroupJsonFormat, ".decode" do
         '{"data":[{"name":"visitor1","_id":"4dfa6cbc888bae20b0000016"},{"name":"visitor2","_id":"4dfa8908888bae20b50000d1"}],"paging":{"current_page":1,"per_page":10}}'
 
       BadgevilleBerlinGroupJsonFormat.decode(@json_collection_w_root).should ==
-        [ {"name" => "visitor1", "_id" => "4dfa6cbc888bae20b0000016"},
-          {"name" => "visitor2", "_id" => "4dfa8908888bae20b50000d1"} ]
+        [ {"name" => "visitor1", "_id" => "4dfa6cbc888bae20b0000016", "rewards" => []},
+          {"name" => "visitor2", "_id" => "4dfa8908888bae20b50000d1", "rewards" => []} ]
     end
 
     it "should handle when there's no root key 'data'" do

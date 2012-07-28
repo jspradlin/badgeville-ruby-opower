@@ -17,9 +17,7 @@ module BadgevilleBerlinGroupJsonFormat
         # instead of a Hash with the RewardDefinition as
         # the key because the latter will not parse.
         json['data'].each do |group|
-          if group['rewards'].present?
-            group['rewards'] = group['rewards'].values
-          end
+          group['rewards'] = group['rewards'].present? ? group['rewards'].values : []
         end
       end
       json['data']
